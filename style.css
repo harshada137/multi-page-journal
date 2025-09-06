@@ -1,0 +1,194 @@
+/* ===== Base ===== */
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: #C7ABBC; /* page background */
+  color: #140919;      /* default text color for paragraphs, lists, etc. */
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #140919; /* links same as other text */
+}
+a:hover { color: #d361b0; }
+
+/* ===== Header ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  background: #5d3c64; /* muted purple */
+  color: #050205;      /* heading color for header text */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.2rem;
+  margin: 0;
+  color: #050205; /* header title */
+}
+
+nav a {
+  color: #140919; /* nav links as paragraph color */
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+nav a:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #d361b0;
+  left: 0;
+  bottom: -4px;
+}
+nav a.cta {
+  background: #ba6e8f; /* muted rose */
+  padding: 8px 20px;
+  border-radius: 20px;
+  color: #fff;
+  transition: 0.3s;
+}
+nav a.cta:hover { background: #d361b0; }
+
+/* ===== Footer ===== */
+footer {
+  background: #5d3c64;
+  color: #140919; /* footer text as paragraph color */
+  padding: 30px 50px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  position: relative;
+  margin-top: 60px;
+}
+footer::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: #d361b0;
+  margin: 0 auto 15px;
+}
+footer .footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 10px;
+}
+footer .footer-links a { color: #140919; font-weight: 500; }
+footer .footer-links a:hover { text-decoration: underline; }
+footer p { text-align: center; margin: 0; font-size: 0.95rem; }
+
+/* ===== Main Layout ===== */
+main {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Two-column sections */
+.section {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.section img {
+  width: 45%;
+  border-radius: 12px;
+}
+.section .text { width: 55%; }
+.section .text h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #050205; /* headings color */
+}
+
+/* Hero Button */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 25px;
+  background: #ba6e8f;
+  color: white;
+  border-radius: 6px;
+}
+
+/* Journal list */
+.entries li { margin-bottom: 12px; font-size: 1.1rem; color: #140919; }
+
+/* Write page - keep form colors unchanged */
+form { display: flex; flex-direction: column; }
+form input, form textarea {
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #d361b0;
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  background: #0c0420; /* dark input background */
+  color: #ffd6f0;      /* keep form text color */
+}
+form button {
+  width: 150px;
+  padding: 10px;
+  background: #ba6e8f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+form button:hover { background: #d361b0; }
+
+/* ===== Background Pattern ===== */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  opacity: 0.08;
+}
+
+body::before {
+  top: -150px;
+  left: -150px;
+  background: radial-gradient(circle at center, #d361b0, #7b466a);
+  transform: rotate(30deg);
+}
+
+body::after {
+  bottom: -200px;
+  right: -200px;
+  background: radial-gradient(circle at center, #5d3c64, #ba6e8f);
+  transform: rotate(-45deg);
+}
+
+/* Optional: small floating circles */
+body::after {
+  content: "";
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #9f6496, #0c0420);
+  opacity: 0.06;
+  bottom: -100px;
+  left: 20%;
+  z-index: -1;
+}
